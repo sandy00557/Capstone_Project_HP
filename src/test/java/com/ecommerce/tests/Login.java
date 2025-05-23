@@ -62,6 +62,7 @@ public class Login extends BaseTest{
         Username.sendKeys(emailValue);
         Password.sendKeys(passwordValue);
         login.click();
+        System.out.println("Changes in Github");
         Assert.assertTrue(driver.getTitle().contains("My Account"),"Login failed.");
 
 
