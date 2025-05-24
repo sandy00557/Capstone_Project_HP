@@ -819,3 +819,6 @@
 2025-05-24 18:33:59,914 INFO  com.ecommerce.pages.SearchPage - Clicked on: InStock
 2025-05-24 18:34:27,638 INFO  com.ecommerce.pages.SearchPage - Hovered over element and clicked target element
 2025-05-24 18:34:28,913 INFO  com.ecommerce.pages.SearchPage - Hovered over element and clicked target element
+2025-05-24 20:34:45,841 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-24 20:35:32,859 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-24 20:35:56,769 INFO  Ecommerce Application - -------Launch Browser-------------
