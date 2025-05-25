@@ -26,9 +26,6 @@ public class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void setup(String browser){
-//        ChromeOptions option=new ChromeOptions();
-
-//        driver=new ChromeDriver(option);
         Log=Logger.getLogger("Ecommerce Application");
         Log.info("-------Launch Browser-------------");
         WebDriverManager.chromedriver().setup();
@@ -58,6 +55,6 @@ public class BaseTest {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(5000);
-//        driver.quit();
+        driver.quit();
     }
 }
