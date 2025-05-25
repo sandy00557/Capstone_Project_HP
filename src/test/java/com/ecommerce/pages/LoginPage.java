@@ -1,35 +1,46 @@
 package com.ecommerce.pages;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    private WebDriver driver;
+    WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    // Constructor to initialize elements
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    private By emailInput = By.id("input-email");
-    private By passwordInput = By.id("input-password");
-    private By loginButton = By.xpath("//input[@value='Login']");
+    // Locators using @FindBy
+    @FindBy(id = "input-email")
+    private WebElement emailInput;
 
-    public void enterEmail(String email){
-        driver.findElement(emailInput).sendKeys(email);
+    @FindBy(id = "input-password")
+    private WebElement passwordInput;
+
+    @FindBy(xpath = "//input[@value='Login']")
+    private WebElement loginButton;
+
+    // Actions
+    public void enterEmail(String email) {
+        emailInput.sendKeys(email);
     }
 
-    public void enterPassword(String pwd){
-        driver.findElement(passwordInput).sendKeys(pwd);
+    public void enterPassword(String password) {
+        passwordInput.sendKeys(password);
     }
 
-    public void clickLogin(){
-        driver.findElement(loginButton).click();
+    public void clickLogin() {
+        loginButton.click();
     }
 
-    // Convenience method to perform login
-    public void login(String email, String password){
+    // Combined login method
+    public void login(String email, String password) {
         enterEmail(email);
         enterPassword(password);
         clickLogin();
     }
 }
+
