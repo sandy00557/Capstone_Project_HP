@@ -3,106 +3,120 @@ package com.ecommerce.pages;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
     private WebDriver driver;
     private Actions actions;
     private static final Logger Log = Logger.getLogger(SearchPage.class);
-    public SearchPage(WebDriver driver,Actions actions){
+
+    public SearchPage(WebDriver driver, Actions actions) {
         this.driver = driver;
-        this.actions=actions;
+        this.actions = actions;
+        PageFactory.initElements(driver, this);
+        Log.info("SearchPage initialized.");
     }
 
-    private By AllCategories=By.xpath("/html[1]/body[1]/div[1]/div[5]/header[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]");
-//    private By Laptop=By.xpath("//a[text()='Laptops' and @data-category_id='18']");
-    private By Search=By.xpath("//button[@class='type-text']");
-    private By Apple=By.xpath("//*[@id=\"mz-filter-panel-0-1\"]/div/div[1]/div/label");
-    private By CinemaValue=By.xpath("//*[@id='mz-filter-panel-0-2']/div/input");
-    private By Blue=By.xpath("//*[@id=\"mz-filter-panel-0-3\"]/div/div[1]/div/label");
-    private By InStock=By.xpath("//*[@id=\"mz-filter-panel-0-4\"]/div/div[1]/div/label");
-    private By Select=By.xpath("//select[@id='input-option231-216836']");
-    private By SelectMedium=By.xpath("//select[@id='input-option231-216836']/option[2]");
-    private By AddToCart=By.xpath("//*[@id=\"entry_216842\"]/button");
-//    public void clickAllCategories(){
-//        driver.findElement(AllCategories).click();
-//    }
-//
-//    public void clickLaptop()
-//    {
-//        driver.findElement(Laptop).click();
-//    }
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[5]/header[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]")
+    private WebElement AllCategories;
+
+    @FindBy(xpath = "//button[@class='type-text']")
+    private WebElement Search;
+
+    @FindBy(xpath = "//*[@id=\"mz-filter-panel-0-1\"]/div/div[1]/div/label")
+    private WebElement Apple;
+
+    @FindBy(xpath = "//*[@id='mz-filter-panel-0-2']/div/input")
+    private WebElement CinemaValue;
+
+    @FindBy(xpath = "//*[@id=\"mz-filter-panel-0-3\"]/div/div[1]/div/label")
+    private WebElement Blue;
+
+    @FindBy(xpath = "//*[@id=\"mz-filter-panel-0-4\"]/div/div[1]/div/label")
+    private WebElement InStock;
+
+    @FindBy(xpath = "//select[@id='input-option231-216836']")
+    private WebElement Select;
+
+    @FindBy(xpath = "//select[@id='input-option231-216836']/option[2]")
+    private WebElement SelectMedium;
+
+    @FindBy(xpath = "//*[@id=\"entry_216842\"]/button")
+    private WebElement AddToCart;
 
     public void click(String elementName) {
-        By locator;
+        WebElement element;
 
-        switch(elementName.toLowerCase()) {
+        switch (elementName.toLowerCase()) {
             case "allcategories":
-                locator = AllCategories;
+                element = AllCategories;
                 break;
             case "search":
-                locator=Search;
+                element = Search;
                 break;
             case "apple":
-                locator=Apple;
+                element = Apple;
                 break;
             case "blue":
-                locator=Blue;
+                element = Blue;
                 break;
             case "instock":
-                locator=InStock;
+                element = InStock;
                 break;
             case "select":
-                locator=Select;
+                element = Select;
                 break;
             case "selectmedium":
-                locator=SelectMedium;
+                element = SelectMedium;
                 break;
             case "addtocart":
-                locator=AddToCart;
+                element = AddToCart;
                 break;
             default:
                 throw new IllegalArgumentException("No such element defined: " + elementName);
         }
 
-        driver.findElement(locator).click();
+        element.click();
         Log.info("Clicked on: " + elementName);
     }
 
-    public void enterKeys(String elementEnter,String keys)
-    {
-        By locatorz;
-        switch(elementEnter.toLowerCase()){
+    public void enterKeys(String elementEnter, String keys) {
+        WebElement element;
+
+        switch (elementEnter.toLowerCase()) {
             case "cinemavalue":
-                locatorz=CinemaValue;
-                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)"); // Scroll down 500 pixels
+                element = CinemaValue;
+                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
                 break;
             default:
                 throw new IllegalArgumentException("No such element defined: " + elementEnter);
         }
-        driver.findElement(locatorz).sendKeys(keys);
-        Log.info("Clicked on: " + elementEnter);
 
+        element.sendKeys(keys);
+        Log.info("Entered keys in: " + elementEnter + " → " + keys);
     }
 
     public void pressEnter(String elementName) {
-        By locator;
+        WebElement element;
+
         switch (elementName.toLowerCase()) {
             case "cinemavalue":
-                locator = CinemaValue;
+                element = CinemaValue;
                 break;
             default:
                 throw new IllegalArgumentException("No such element defined: " + elementName);
         }
 
-        driver.findElement(locator).sendKeys(Keys.ENTER);
+        element.sendKeys(Keys.ENTER);
+        Log.info("Pressed ENTER on: " + elementName);
     }
 
     public void hoverAndClick(String hoverElementXpath, String clickElementXpath) {
         WebElement hoverElement = driver.findElement(By.xpath(hoverElementXpath));
         WebElement clickElement = driver.findElement(By.xpath(clickElementXpath));
         actions.moveToElement(hoverElement).moveToElement(clickElement).click().perform();
-        Log.info("Hovered over element and clicked target element");
+        Log.info("Hovered over element: " + hoverElementXpath + " and clicked on: " + clickElementXpath);
     }
-
-
 }
+
