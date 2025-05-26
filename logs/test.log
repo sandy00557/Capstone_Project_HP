@@ -822,3 +822,59 @@
 2025-05-24 20:34:45,841 INFO  Ecommerce Application - -------Launch Browser-------------
 2025-05-24 20:35:32,859 INFO  Ecommerce Application - -------Launch Browser-------------
 2025-05-24 20:35:56,769 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-26 12:47:23,980 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-26 12:47:23,980 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-26 12:47:57,120 INFO  com.ecommerce.tests.RegisterTest - Navigated to URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+2025-05-26 12:47:57,120 INFO  com.ecommerce.tests.RegisterTest - Test data loaded: FirstName=Santhosh, Email=santhoshs8485@gmail.com
+2025-05-26 12:47:57,132 INFO  com.ecommerce.tests.RegisterTest - Starting Valid Registration Test
+2025-05-26 12:47:57,172 INFO  com.ecommerce.tests.RegisterTest - Navigated to URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+2025-05-26 12:47:57,172 INFO  com.ecommerce.tests.RegisterTest - Test data loaded: FirstName=Santhosh, Email=santhoshs8485@gmail.com
+2025-05-26 12:47:57,174 INFO  com.ecommerce.tests.RegisterTest - Starting Valid Registration Test
+2025-05-26 12:47:57,182 INFO  com.ecommerce.pages.RegisterPage - Enter First Name: Santhosh
+2025-05-26 12:47:57,182 INFO  com.ecommerce.pages.RegisterPage - Enter First Name: Santhosh
+2025-05-26 12:47:57,629 INFO  com.ecommerce.pages.RegisterPage - Enter Last Name: Krishnan
+2025-05-26 12:47:57,993 INFO  com.ecommerce.pages.RegisterPage - Enter Email: santhoshs8485@gmail.com
+2025-05-26 12:47:58,269 INFO  com.ecommerce.pages.RegisterPage - Enter Last Name: Krishnan
+2025-05-26 12:47:58,385 INFO  com.ecommerce.pages.RegisterPage - Enter Telephone: 7550022445
+2025-05-26 12:47:58,820 INFO  com.ecommerce.pages.RegisterPage - Enter Password
+2025-05-26 12:47:59,069 INFO  com.ecommerce.pages.RegisterPage - Confirm Password
+2025-05-26 12:47:59,256 INFO  com.ecommerce.pages.RegisterPage - Click Agree checkbox
+2025-05-26 12:47:59,348 INFO  com.ecommerce.pages.RegisterPage - Enter Email: santhoshs8485@gmail.com
+2025-05-26 12:47:59,463 INFO  com.ecommerce.pages.RegisterPage - Click Continue button
+2025-05-26 12:48:00,536 INFO  com.ecommerce.pages.RegisterPage - Enter Telephone: 7550022445
+2025-05-26 12:48:01,118 INFO  com.ecommerce.tests.RegisterTest - Page Title after registration: Register Account
+2025-05-26 12:48:01,118 WARN  com.ecommerce.tests.RegisterTest - Intentional Failure: Asserting incorrect title for demo purposes.
+2025-05-26 12:48:01,671 INFO  com.ecommerce.pages.RegisterPage - Enter Password
+2025-05-26 12:48:01,857 INFO  com.ecommerce.pages.RegisterPage - Confirm Password
+2025-05-26 12:48:02,069 INFO  com.ecommerce.pages.RegisterPage - Click Agree checkbox
+2025-05-26 12:48:02,352 INFO  com.ecommerce.pages.RegisterPage - Click Continue button
+2025-05-26 12:48:04,202 INFO  com.ecommerce.tests.RegisterTest - Page Title after registration: Register Account
+2025-05-26 12:48:04,203 WARN  com.ecommerce.tests.RegisterTest - Intentional Failure: Asserting incorrect title for demo purposes.
+2025-05-26 12:48:11,673 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-26 12:48:13,599 INFO  Ecommerce Application - -------Launch Browser-------------
+2025-05-26 12:48:40,793 INFO  com.ecommerce.tests.RegisterTest - Navigated to URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+2025-05-26 12:48:40,793 INFO  com.ecommerce.tests.RegisterTest - Test data loaded: FirstName=Santhosh, Email=santhoshs8485@gmail.com
+2025-05-26 12:48:40,795 INFO  com.ecommerce.tests.RegisterTest - Starting Invalid Registration Test
+2025-05-26 12:48:40,796 INFO  com.ecommerce.pages.RegisterPage - Enter First Name: Santhosh
+2025-05-26 12:48:40,912 INFO  com.ecommerce.pages.RegisterPage - Enter Last Name: Krishnan
+2025-05-26 12:48:41,028 INFO  com.ecommerce.pages.RegisterPage - Enter Email: santhoshs8485@gmail.com
+2025-05-26 12:48:41,131 INFO  com.ecommerce.pages.RegisterPage - Enter Telephone: 
+2025-05-26 12:48:41,213 INFO  com.ecommerce.pages.RegisterPage - Enter Password
+2025-05-26 12:48:41,360 INFO  com.ecommerce.pages.RegisterPage - Confirm Password
+2025-05-26 12:48:41,447 INFO  com.ecommerce.pages.RegisterPage - Click Agree checkbox
+2025-05-26 12:48:41,534 INFO  com.ecommerce.pages.RegisterPage - Click Continue button
+2025-05-26 12:48:42,941 INFO  com.ecommerce.tests.RegisterTest - Error Message Found: true
+2025-05-26 12:48:42,942 INFO  com.ecommerce.tests.RegisterTest - Invalid Registration Test Completed
+2025-05-26 12:48:44,607 INFO  com.ecommerce.tests.RegisterTest - Navigated to URL: https://ecommerce-playground.lambdatest.io/index.php?route=account/register
+2025-05-26 12:48:44,607 INFO  com.ecommerce.tests.RegisterTest - Test data loaded: FirstName=Santhosh, Email=santhoshs8485@gmail.com
+2025-05-26 12:48:44,608 INFO  com.ecommerce.tests.RegisterTest - Starting Invalid Registration Test
+2025-05-26 12:48:44,609 INFO  com.ecommerce.pages.RegisterPage - Enter First Name: Santhosh
+2025-05-26 12:48:44,775 INFO  com.ecommerce.pages.RegisterPage - Enter Last Name: Krishnan
+2025-05-26 12:48:44,908 INFO  com.ecommerce.pages.RegisterPage - Enter Email: santhoshs8485@gmail.com
+2025-05-26 12:48:45,079 INFO  com.ecommerce.pages.RegisterPage - Enter Telephone: 
+2025-05-26 12:48:45,207 INFO  com.ecommerce.pages.RegisterPage - Enter Password
+2025-05-26 12:48:45,331 INFO  com.ecommerce.pages.RegisterPage - Confirm Password
+2025-05-26 12:48:45,496 INFO  com.ecommerce.pages.RegisterPage - Click Agree checkbox
+2025-05-26 12:48:45,736 INFO  com.ecommerce.pages.RegisterPage - Click Continue button
+2025-05-26 12:48:47,696 INFO  com.ecommerce.tests.RegisterTest - Error Message Found: true
+2025-05-26 12:48:47,696 INFO  com.ecommerce.tests.RegisterTest - Invalid Registration Test Completed

@@ -3,47 +3,47 @@
 <suite name="CrossBrowser Test" parallel="tests" thread-count="2">
 
     <!-- Run on Chrome -->
-<!--    <test verbose="2" preserve-order="true" name="Testing in Chrome">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--&lt;!&ndash;            <class name="com.ecommerce.tests.RegisterTest">&ndash;&gt;-->
-<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="validRegister"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="invalidRegister"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
-<!--&lt;!&ndash;            </class>&ndash;&gt;-->
-<!--&lt;!&ndash;            <class name="com.ecommerce.tests.LoginTest">&ndash;&gt;-->
-<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="validLogin"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="invalidLogin"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <include name="emptyCredentials"/>&ndash;&gt;-->
-<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
-<!--&lt;!&ndash;            </class>&ndash;&gt;-->
+    <test verbose="2" preserve-order="true" name="Testing in Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.ecommerce.tests.RegisterTest">
+                <methods>
+                    <include name="validRegister"/>
+                    <include name="invalidRegister"/>
+                </methods>
+            </class>
+<!--            <class name="com.ecommerce.tests.LoginTest">-->
+<!--                <methods>-->
+<!--                    <include name="validLogin"/>-->
+<!--                    <include name="invalidLogin"/>-->
+<!--                    <include name="emptyCredentials"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 <!--            <class name="com.ecommerce.tests.SearchTest">-->
 <!--                <methods>-->
 <!--                    <include name="Searching"/>-->
 <!--                </methods>-->
 <!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+        </classes>
+    </test>
 
     <!-- Run on Edge -->
     <test verbose="2" preserve-order="true" name="Testing in Edge">
         <parameter name="browser" value="edge"/>
-        <classes >
-<!--            <class name="com.ecommerce.tests.RegisterTest">-->
-<!--                <methods>-->
-<!--                    <include name="validRegister"/>-->
-<!--                    <include name="invalidRegister"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-            <class name="com.ecommerce.tests.LoginTest">
+        <classes>
+            <class name="com.ecommerce.tests.RegisterTest">
                 <methods>
-                    <include name="validLogin"/>
-                    <include name="invalidLogin"/>
-                    <include name="emptyCredentials"/>
+                    <include name="validRegister"/>
+                    <include name="invalidRegister"/>
                 </methods>
             </class>
+<!--            <class name="com.ecommerce.tests.LoginTest">-->
+<!--                <methods>-->
+<!--                    <include name="validLogin"/>-->
+<!--                    <include name="invalidLogin"/>-->
+<!--                    <include name="emptyCredentials"/>-->
+<!--                </methods>-->
+<!--            </class>-->
 <!--            <class name="com.ecommerce.tests.SearchTest">-->
 <!--                <methods>-->
 <!--                    <include name="Searching"/>-->
