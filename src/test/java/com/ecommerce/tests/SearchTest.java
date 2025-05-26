@@ -22,49 +22,36 @@ public class SearchTest extends BaseTest {
         Actions actions = new Actions(driver);
         SearchPage search = new SearchPage(driver, actions);
 
-        search.click("allcategories");
-        ScreenshotUtils.takeScreenshot(driver, "02_AllCategoriesClicked_Search");
+        search.click("AllCategories");
+        search.click("Desktop");
+        ScreenshotUtils.takeScreenshot(driver, "02_Desktop_Search");
 
-        Log.info("All Categories Clicked");
-        search.click("Search");
-        search.click("Apple");
-        ScreenshotUtils.takeScreenshot(driver, "03_AppleFilterApplied_Search");
-        Log.info("Apple Clicked");
-        Thread.sleep(5000);
-        search.enterKeys("CinemaValue", "Cinema");
-        search.pressEnter("CinemaValue");
-        ScreenshotUtils.takeScreenshot(driver, "04_CinemaSearch_Search");
-        Log.info("Cinema Value Entered");
+        Log.info("Desktop Clicked");
 
+        search.enterKeys("Apple Cinema","Apple Cinema");
 
+        search.click("SearchIcon");
 
-        search.click("Blue");
-        System.out.println("Blue Clicked");
-        ScreenshotUtils.takeScreenshot(driver, "05_BlueFilter_Search");
-        Log.info("Blue Color Clicked");
+        search.enterKeys("MinimumPrice","120");
+        search.enterKeys("MaximumPrice","125");
 
-        search.click("InStock");
-        System.out.println("Instock clicked");
-        ScreenshotUtils.takeScreenshot(driver, "06_InStockFilter_Search");
+        ScreenshotUtils.takeScreenshot(driver,"03_Price_Range_Search");
+        search.click("SearchNew");
+        Helper.scrollByPixels(driver,0,300);
+        search.click("ProductClick");
+        Log.info("Product Clicked");
+
+        ScreenshotUtils.takeScreenshot(driver, "04_Product_Search");
 
         Helper.scrollByPixels(driver, 0, 300);
+
         Thread.sleep(5000);
-
-        String hoverXpath = "//*[@id=\"mz-product-grid-image-42-212469\"]/div/div[1]/img";
-        String clickXpath = "//*[@id=\"entry_212469\"]/div/div/div/div[1]/div[2]/button[1]/i";
-        search.hoverAndClick(hoverXpath, clickXpath);
-        ScreenshotUtils.takeScreenshot(driver, "07_HoverAddToCart_Search");
-
-        System.out.println("Hovered and clicked Add to Cart");
-
-        Helper.scrollByPixels(driver, 0, 400);
-
         search.click("Select");
         search.click("SelectMedium");
-        ScreenshotUtils.takeScreenshot(driver, "08_SizeMediumSelected_Search");
+        ScreenshotUtils.takeScreenshot(driver, "05_SizeMediumSelected_Search");
 
         search.click("AddToCart");
-        ScreenshotUtils.takeScreenshot(driver, "09_FinalAddToCart_Search");
+        ScreenshotUtils.takeScreenshot(driver, "06_FinalAddToCart_Search");
     }
 }
 

@@ -18,25 +18,33 @@ public class SearchPage {
         Log.info("SearchPage initialized.");
     }
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[5]/header[1]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[1]/button[1]")
+    @FindBy(css="div[id='entry_217822'] button[type='button']")
     private WebElement AllCategories;
 
-    @FindBy(xpath = "//button[@class='type-text']")
-    private WebElement Search;
+    @FindBy(css ="div[id='main-header'] a:nth-child(2)")
+    private WebElement Desktop;
 
-    @FindBy(xpath = "//*[@id=\"mz-filter-panel-0-1\"]/div/div[1]/div/label")
-    private WebElement Apple;
+    @FindBy(css = "div[id='entry_217822'] input[placeholder='Search For Products']")
+    private WebElement AppleCinema;
 
-    @FindBy(xpath = "//*[@id='mz-filter-panel-0-2']/div/input")
-    private WebElement CinemaValue;
+    @FindBy(css="button[class='type-text']")
+    private WebElement SearchIcon;
 
-    @FindBy(xpath = "//*[@id=\"mz-filter-panel-0-3\"]/div/div[1]/div/label")
-    private WebElement Blue;
 
-    @FindBy(xpath = "//*[@id=\"mz-filter-panel-0-4\"]/div/div[1]/div/label")
-    private WebElement InStock;
+    @FindBy(css = "div[id='mz-filter-panel-0-0'] input[placeholder='Minimum Price']")
+    private WebElement MinimumPrice;
 
-    @FindBy(xpath = "//select[@id='input-option231-216836']")
+    @FindBy(css="div[id='mz-filter-panel-0-0'] input[placeholder='Maximum Price']")
+    private WebElement MaximumPrice;
+
+    @FindBy(xpath = "//input[@id='button-search']")
+    private WebElement SearchNew;
+
+
+    @FindBy(css = "a[id='mz-product-grid-image-42-212469'] div[class='carousel-item active'] img[title='Apple Cinema 30&quot;']")
+    private WebElement ProductClick;
+
+    @FindBy(css = "#input-option231-216836")
     private WebElement Select;
 
     @FindBy(xpath = "//select[@id='input-option231-216836']/option[2]")
@@ -52,17 +60,17 @@ public class SearchPage {
             case "allcategories":
                 element = AllCategories;
                 break;
-            case "search":
-                element = Search;
+            case "desktop":
+                element = Desktop;
                 break;
-            case "apple":
-                element = Apple;
+            case "searchicon":
+                element = SearchIcon;
                 break;
-            case "blue":
-                element = Blue;
+            case "searchnew":
+                element = SearchNew;
                 break;
-            case "instock":
-                element = InStock;
+            case "productclick":
+                element=ProductClick;
                 break;
             case "select":
                 element = Select;
@@ -85,9 +93,17 @@ public class SearchPage {
         WebElement element;
 
         switch (elementEnter.toLowerCase()) {
-            case "cinemavalue":
-                element = CinemaValue;
-                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
+            case "apple cinema":
+                element = AppleCinema;
+//                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
+                break;
+            case "minimumprice":
+                element = MinimumPrice;
+//                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
+                break;
+            case "maximumprice":
+                element = MaximumPrice;
+//                ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,400)");
                 break;
             default:
                 throw new IllegalArgumentException("No such element defined: " + elementEnter);
@@ -97,20 +113,20 @@ public class SearchPage {
         Log.info("Entered keys in: " + elementEnter + " → " + keys);
     }
 
-    public void pressEnter(String elementName) {
-        WebElement element;
-
-        switch (elementName.toLowerCase()) {
-            case "cinemavalue":
-                element = CinemaValue;
-                break;
-            default:
-                throw new IllegalArgumentException("No such element defined: " + elementName);
-        }
-
-        element.sendKeys(Keys.ENTER);
-        Log.info("Pressed ENTER on: " + elementName);
-    }
+//    public void pressEnter(String elementName) {
+//        WebElement element;
+//
+//        switch (elementName.toLowerCase()) {
+//            case "cinemavalue":
+//                element = CinemaValue;
+//                break;
+//            default:
+//                throw new IllegalArgumentException("No such element defined: " + elementName);
+//        }
+//
+//        element.sendKeys(Keys.ENTER);
+//        Log.info("Pressed ENTER on: " + elementName);
+//    }
 
     public void hoverAndClick(String hoverElementXpath, String clickElementXpath) {
         WebElement hoverElement = driver.findElement(By.xpath(hoverElementXpath));
